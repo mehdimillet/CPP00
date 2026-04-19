@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 11:10:27 by memillet          #+#    #+#             */
-/*   Updated: 2026/04/18 21:59:25 by memillet         ###   ########.fr       */
+/*   Updated: 2026/04/19 13:43:00 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string>
 # include <iostream>
 # include <iomanip>
+# include <cstdlib>
 # include "Contact.hpp"
 
 bool    isOnlySpaces(std::string);
@@ -28,7 +29,7 @@ class	PhoneBook
 		int oldContact;
 	public:
 		void	addContact();
-		void	searchContact(int);
+		void	searchContact();
 		PhoneBook();
 		~PhoneBook();
 };

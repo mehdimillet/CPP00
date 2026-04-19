@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 11:10:19 by memillet          #+#    #+#             */
-/*   Updated: 2026/04/18 21:58:35 by memillet         ###   ########.fr       */
+/*   Updated: 2026/04/19 15:28:45 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,44 @@ void    PhoneBook::addContact()
     }
     contacts[oldContact].setDarkestSecret(input[4]);
     oldContact += 1;
-    count += 1;
+    if (count < 8)
+        count++;
     if (oldContact == 8)
         oldContact = 0;
 }
 
-void    PhoneBook::searchContact(int index)
+void    PhoneBook::searchContact()
 {
-    
+    for (int i = 0; i < count; i++)
+    {
+        std::cout << std::setw(10) << i + 1 << "|";
+        std::string name = contacts[i].getFirstName();
+        if (name.length() > 10)
+            name = name.substr(0, 9) + ".";
+        std::cout << std::setw(10) << name << "|";
+        std::string lastname = contacts[i].getLastName();
+        if (lastname.length() > 10)
+            lastname = lastname.substr(0, 9) + ".";
+        std::cout << std::setw(10) << lastname << "|";
+        std::string nickname = contacts[i].getNickName();
+        if (nickname.length() > 10)
+            nickname = nickname.substr(0, 9) + ".";
+        std::cout << std::setw(10) << nickname << std::endl;
+    }
+    int index = -1;
+    std::string input;
+    while (index > count || index < 1)
+    {
+        std::cout << "choose the contact" << std::endl;
+        std::getline(std::cin, input);
+        index = atoi(input.c_str());
+        if (index <= count && index >= 1)
+            break;
+        std::cout << "Bad index, enter a valid plz" << std::endl;
+    }
+    std::cout << contacts[index - 1].getFirstName() << std::endl;
+    std::cout << contacts[index - 1].getLastName() << std::endl;
+    std::cout << contacts[index - 1].getNickName() << std::endl;
+    std::cout << contacts[index - 1].getPhoneNumber() << std::endl;
+    std::cout << contacts[index - 1].getDarkestSecret() << std::endl;
 }

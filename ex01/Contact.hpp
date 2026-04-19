@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 11:10:05 by memillet          #+#    #+#             */
-/*   Updated: 2026/04/18 14:18:49 by memillet         ###   ########.fr       */
+/*   Updated: 2026/04/19 13:40:55 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ class	Contact
 		Contact(); // constructeur on l'utilise pour creer un objet
 		~Contact(); // desttructeur pour detruire l'objet
 		std::string	getFirstName();
-		void		setFirstName(std::string fname);
+		void		setFirstName(std::string);
 		std::string	getLastName();
-		void		setLastName(std::string lname);
-		std::string	getnickName();
-		void    Contact::setNickName(std::string nname);
+		void		setLastName(std::string);
+		std::string	getNickName();
+		void    	setNickName(std::string);
 		std::string	getPhoneNumber();
-		void		setPhoneNumber(std::string number);
+		void		setPhoneNumber(std::string);
 		std::string	getDarkestSecret();
-		void		setDarkestSecret(std::string secret);
+		void		setDarkestSecret(std::string);
 };
 
 #endif

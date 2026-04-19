@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 11:10:10 by memillet          #+#    #+#             */
-/*   Updated: 2026/04/18 14:18:57 by memillet         ###   ########.fr       */
+/*   Updated: 2026/04/19 13:08:49 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ std::string	Contact::getLastName()
     return (lastName);
 }
 
-std::string Contact::getnickName()
+std::string Contact::getNickName()
 {
     return (nickName);
 }
