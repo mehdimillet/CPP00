@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 11:10:14 by memillet          #+#    #+#             */
-/*   Updated: 2026/04/19 15:30:23 by memillet         ###   ########.fr       */
+/*   Updated: 2026/05/10 15:15:32 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ int main(void)
     while(true)
     {
         std::cout << "Enter a command : ";
-        if (!std::getline(std::cin, input))
-            break;
+        if(std::cin.eof())
+        {
+            std::cout << "EOF detected, closing programm" << std::endl;
+            break ;
+        }
         if (input.compare("ADD") == 0)
             phonebook.addContact();
         else if (input.compare("SEARCH") == 0)
